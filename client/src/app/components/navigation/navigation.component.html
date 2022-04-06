@@ -2,13 +2,27 @@
 <link rel="stylesheet" href="navigation.component.css">
 
 <div class="toolbar" role="banner">
-    <span id = "welcome">Welcome</span>
+    <img src="https://portal.ingenieria.usac.edu.gt/images/logo_facultad/logo_azul.png" alt="logo">
       <div class="spacer"></div>
-      <a id = "signin" routerLink="/signin" title="signin">
-        SignIn
-      </a>
-      <a id = "signup" routerLink="/signup" title="signup">
-        SignUp
-      </a>
-  </div>
+      <ul class="menu" data-animation="diagonal">
+        <li>
+          <a id = "signin" routerLink="/signin" title="signin">
+            SignIn
+            <span class="border border-top"></span>
+            <span class="border border-right"></span>
+            <span class="border border-bottom"></span>
+            <span class="border border-left"></span>
+          </a>
+        </li>
+        <li>
+        <a id = "signup" routerLink="/signup" title="signup">
+          SignUp
+          <span class="border border-top"></span>
+          <span class="border border-right"></span>
+          <span class="border border-bottom"></span>
+          <span class="border border-left"></span>
+        </a>
+      </li>
+    </ul>
+</div>
 

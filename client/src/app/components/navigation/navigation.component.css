@@ -5,6 +5,8 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --transition-duration: 0.2s;
+    --transition-delay: 0.2s;
 }
 
 h1,
@@ -29,23 +31,138 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 100px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: white;
     color: white;
     font-weight: 600;
+    box-shadow:0px 10px 10px #333;
 }
 
-.toolbar #welcome {
-    margin: 30px;
+.toolbar img {
+    padding-left: 50px;
+    vertical-align: middle;
+    max-width: 250px;
+    max-height: 65px;
 }
 
 .toolbar #signin {
-    color:aliceblue;
+    color:black;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 2em;
+    letter-spacing: 0em;
+    line-height: 1.7em;
+    font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .toolbar #signup {
-    color:aliceblue;
-    margin: 16px   16px;
+    color:black;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 2em;
+    letter-spacing: 0em;
+    line-height: 1.7em;
+    font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.toolbar .menu {
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar .menu li {
+    margin-right: 70px;
+}
+  
+.toolbar .menu a {
+    position: relative;
+    display: block;
+    padding: 10px;
+}
+
+.toolbar .menu .border {
+    position: absolute;
+    left: 0;
+    background: rgb(24 61 139);
+    transition: transform var(--transition-duration) ease-in-out;
+}
+
+.toolbar .menu .border-top,
+.toolbar .menu .border-bottom {
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+}
+
+.toolbar .menu .border-left,
+.toolbar .menu .border-right {
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+}
+
+.toolbar .menu .border-top,
+.toolbar .menu .border-left,
+.toolbar .menu .border-right {
+    top: 0;
+}
+
+.toolbar .menu .border-bottom {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+.toolbar .menu .border-top {
+    transform-origin: top left;
+}
+
+.toolbar .menu .border-left {
+    transform-origin: bottom left;
+}
+
+.toolbar .menu .border-right {
+    left: auto;
+    right: 0;
+    transform-origin: top right;
+}
+
+.toolbar .menu a:hover .border-top,
+.toolbar .menu a:hover .border-bottom {
+  transform: scaleX(1);
+}
+
+.toolbar .menu a:hover .border-left,
+.toolbar .menu a:hover .border-right {
+  transform: scaleY(1);
+}
+
+.toolbar .menu a:hover .border-right {
+    transition-delay: var(--transition-delay);
+}
+  
+.toolbar .menu a:hover .border-bottom {
+    transition-delay: calc(var(--transition-delay) * 2);
+}
+  
+.toolbar .menu a:hover .border-left {
+    transition-delay: calc(var(--transition-delay) * 3);
+}
+
+.toolbar .menu[data-animation="diagonal"] .border-left {
+    transform-origin: top left;
+}
+
+.toolbar .menu[data-animation="diagonal"] .border-right,
+.toolbar .menu[data-animation="diagonal"] .border-bottom {
+    transform-origin: bottom right;
+}
+
+.toolbar .menu[data-animation="diagonal"] a:hover [class^=border]{
+    transition-delay: 0s;
 }
