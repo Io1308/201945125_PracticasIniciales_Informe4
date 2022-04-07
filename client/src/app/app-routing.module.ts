@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
-import {NavigationComponent} from './components/navigation/navigation.component'
 import { AppComponent } from './app.component';
+import { MuroComponent } from './components/muro/muro.component';
+import { MiperfilComponent } from './components/miperfil/miperfil.component';
+import { RecuperarComponent } from './components/recuperar/recuperar.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,18 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'muro',
+    component: MuroComponent
+  },
+  {
+    path: 'miperfil',
+    component: MiperfilComponent
+  },
+  {
+    path: 'recuperar',
+    component: RecuperarComponent
   }
 ];
 

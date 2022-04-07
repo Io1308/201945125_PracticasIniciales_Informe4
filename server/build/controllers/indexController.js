@@ -31,7 +31,7 @@ class IndexController {
             if (id.length > 0) {
                 const email = yield database_1.default.query('SELECT * FROM alumnos WHERE email = ?', [body.email]);
                 if (email.length != 0) {
-                    yield database_1.default.query('UPDATE alumnos set contraseña = ? WHERE email = ?', [body.contraseña, body.email]);
+                    yield database_1.default.query('UPDATE alumnos set contra = ? WHERE email = ?', [body.contra, body.email]);
                     res.json({ info: 'contraseña recuperada' });
                     console.log('contraseña recuperada');
                 }
@@ -40,18 +40,27 @@ class IndexController {
             console.log('F');
         });
     }
+    //Iniciar Sesion
     signIn(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const body = req.body;
             const id = yield database_1.default.query('SELECT * FROM alumnos WHERE idAlumno = ?', [body.idAlumno]);
             if (id.length > 0) {
-                const contra = yield database_1.default.query('SELECT * FROM alumnos WHERE contraseña = ?', [body.contraseña]);
+                const contra = yield database_1.default.query('SELECT * FROM alumnos WHERE contra = ?', [body.contra]);
                 if (contra.length != 0) {
                     res.json({ info: 'ingreso' });
                     console.log('feli');
                 }
             }
             res.status(404).json({ text: "Carnet o Contraseña incorrectos" });
+        });
+    }
+    //Ver Mi Perfil
+    miPerfil(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { idAlumno } = req.params;
+            const alumno = yield database_1.default.query('SELECT * FROM alumnos WHERE idAlumno = ?', [idAlumno]);
+            return res.json(alumno);
         });
     }
 }

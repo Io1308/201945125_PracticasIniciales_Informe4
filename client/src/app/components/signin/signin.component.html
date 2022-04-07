@@ -1,36 +1,47 @@
 <link rel="stylesheet" href="signin.component.css">
 
 <div class="toolbar" role="banner">
-    <span id = "welcome">Welcome</span>
-      <div class="spacer"></div>
-      <a id = "signin" routerLink="/" title="signin">
-        Back
-      </a>
+  <img src="https://portal.ingenieria.usac.edu.gt/images/logo_facultad/logo_azul.png" alt="logo">
+    <div class="spacer"></div>
+    <ul class="menu" data-animation="diagonal">
+      <li>
+        <a id = "back" routerLink="/" title="back">
+          Back
+          <span class="border border-top"></span>
+          <span class="border border-right"></span>
+          <span class="border border-bottom"></span>
+          <span class="border border-left"></span>
+        </a>
+      </li>
+      <li>
       <a id = "signup" routerLink="/signup" title="signup">
         SignUp
+        <span class="border border-top"></span>
+        <span class="border border-right"></span>
+        <span class="border border-bottom"></span>
+        <span class="border border-left"></span>
       </a>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div>
+    </li>
+  </ul>
+</div>
 
-    <form action="/my-handling-form-page" method="post">
-        <ul>
-         <li>
-           <label for="name">Carnet: </label>
-           <input type="text" id="name" name="user_name">
-         </li>
-         <li>
-           <label for="mail">Contraseña: </label>
-           <input type="email" id="mail" name="user_mail">
-         </li>
-        </ul>
-    </form>
+<div class="space-vertical"></div>
 
-  </div>
+<div>
+
+  <form>
+    <ul>
+      <li>
+        <label for="carnet">Carnet: </label>
+        <input type="text" id="carnet" name="carnet" [(ngModel)]="alumno.idAlumno">
+      </li>
+      <li>
+        <label for="contra">Contraseña: </label>
+        <input type="password" id="contra" name="contra" [(ngModel)]="alumno.contra">
+      </li>
+    </ul>
+    <button class="recuperar" routerLink="/recuperar"><span>Recuperar Contraseña</span></button>
+    <button class="iniciar" (click)="iniciar()"><span>Iniciar Sesion</span></button>
+  </form>
+
+</div>

@@ -1,0 +1,107 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 8px 0;
+}
+
+.toolbar #bienvenido{
+    color:white;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 2em;
+    letter-spacing: 0em;
+    line-height: 1.7em;
+    font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
+    padding-left: 5%;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.space-vertical{
+  height: 150px;
+}  
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(24 61 139);
+  border-bottom: 2px solid white;
+  font-weight: 600;
+  box-shadow:0px 10px 10px #333;
+}
+
+.toolbar #mip {
+  color:white;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 2em;
+  letter-spacing: 0em;
+  line-height: 1.7em;
+  font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.toolbar #logout {
+  color:white;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 2em;
+  letter-spacing: 0em;
+  line-height: 1.7em;
+  font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.toolbar .menu {
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar .menu li {
+    margin-right: 70px;
+}
+  
+.toolbar .menu a {
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.toolbar .menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #b47dcd, #e878a2, #eb85ab);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.toolbar .menu a:hover::before {
+    transform: scaleX(1);
+}

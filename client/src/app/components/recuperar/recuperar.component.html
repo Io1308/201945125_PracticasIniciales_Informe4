@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="signup.component.css">
+<link rel="stylesheet" href="recuperar.component.css">
 
 <div class="toolbar" role="banner">
   <img src="https://portal.ingenieria.usac.edu.gt/images/logo_facultad/logo_azul.png" alt="logo">
@@ -12,15 +12,6 @@
           <span class="border border-bottom"></span>
           <span class="border border-left"></span>
         </a>
-      </li>
-      <li>
-      <a id = "signin" routerLink="/signin" title="signin">
-        SignIn
-        <span class="border border-top"></span>
-        <span class="border border-right"></span>
-        <span class="border border-bottom"></span>
-        <span class="border border-left"></span>
-      </a>
     </li>
   </ul>
 </div>
@@ -32,27 +23,19 @@
   <form>
     <ul>
       <li>
-        <label for="nombres">Nombres: </label>
-        <input type="text" id="nombres" name="nombres" [(ngModel)]="alumno.nombres">
-      </li>
-      <li>
-        <label for="apellidos">Apellidos: </label>
-        <input type="text" id="apellidos" name="apellidos" [(ngModel)]="alumno.apellidos">
-      </li>
-      <li>
         <label for="carnet">Carnet: </label>
         <input type="text" id="carnet" name="carnet" [(ngModel)]="alumno.idAlumno">
       </li>
       <li>
-        <label for="email">Email: </label>
-        <input type="email" id="email" name="email" [(ngModel)]="alumno.email">
+        <label for="correo">Correo: </label>
+        <input type="text" id="correo" name="correo" [(ngModel)]="alumno.email">
       </li>
       <li>
         <label for="contra">Contraseña: </label>
         <input type="password" id="contra" name="contra" [(ngModel)]="alumno.contra">
       </li>
     </ul>
-    <button class="registro" (click)="registro()"><span>Registrarse</span></button>
+    <button class="recuperar" (click)="recuperar()"><span>Recuperar Contraseña</span></button>
   </form>
 
 </div>

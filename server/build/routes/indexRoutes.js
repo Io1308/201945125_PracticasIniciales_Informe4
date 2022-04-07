@@ -8,10 +8,10 @@ class IndexRoutes {
         this.config();
     }
     config() {
-        //this.router.get('/', indexController.index);
-        this.router.post('/signin', indexController_1.indexController.signIn);
-        this.router.put('/signup', indexController_1.indexController.signUp);
-        this.router.post('/recuperar', indexController_1.indexController.recuperar);
+        this.router.post('/api/signin', indexController_1.indexController.signIn);
+        this.router.put('/api/signup', indexController_1.indexController.signUp);
+        this.router.get('/api/miperfil/:idAlumno', indexController_1.indexController.miPerfil);
+        this.router.post('/api/recuperar/', indexController_1.indexController.recuperar);
     }
 }
 const indexRoutes = new IndexRoutes();

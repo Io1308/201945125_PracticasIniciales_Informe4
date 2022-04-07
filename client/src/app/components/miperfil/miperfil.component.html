@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="miperfil.component.css">
+
+<div class="toolbar" role="banner">
+    <p id="bienvenido">Mi Perfil<p>
+    <div class="spacer"></div>
+    <ul class="menu">
+      <li>
+        <a id = "muro" routerLink="/muro" title="muro">
+          Muro
+        </a>
+      </li>
+      <li>
+      <a id = "logout" routerLink="/" title="logout">
+        LogOut
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="space-vertical"></div>
+
+<div class="body" *ngFor="let alumno of alumno">
+
+    <label>Tu nombre es: </label><p>{{alumno.nombres}}</p>
+    <label>Tus apellidos son: </label><p>{{alumno.apellidos}}</p><br>
+    <label>Tu carnet es: </label><p>{{alumno.idAlumno}}</p>
+    <label>Tu correo es: </label><p>{{alumno.email}}</p><br>
+    <label>Tus cursos son: </label><p>{{alumno.cursos}}</p>
+    <label>Tus creditos son: </label><p>{{alumno.creditos}}</p><br>
+
+    <div class="space-vertical"></div>
+
+    <form>
+        <label>Agregar Cursos</label>
+        <ul>
+          <li>
+            <label for="carnet">Curso: </label>
+            <input type="text" id="cursos" name="cursos" [(ngModel)]="alumno.cursos">
+          </li>
+          <li>
+            <label for="contra">Creditos: </label>
+            <input type="text" id="creditos" name="creditos" [(ngModel)]="alumno.creditos">
+          </li>
+        </ul>
+        <!-- <button class="iniciar" (click)="guardar()"><span>Iniciar Sesion</span></button> -->
+      </form>
+
+</div>
+

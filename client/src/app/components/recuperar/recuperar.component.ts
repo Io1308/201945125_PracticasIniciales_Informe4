@@ -5,11 +5,11 @@ import { Alumno } from 'src/app/models/Alumno';
 import { AplicacionService } from '../../services/aplicacion.service'
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  selector: 'app-recuperar',
+  templateUrl: './recuperar.component.html',
+  styleUrls: ['./recuperar.component.css']
 })
-export class SigninComponent implements OnInit {
+export class RecuperarComponent implements OnInit {
 
   alumno: Alumno = {
     idAlumno: 0,
@@ -26,17 +26,14 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  iniciar(){
+  recuperar(){
     delete this.alumno.nombres;
     delete this.alumno.apellidos;
-    delete this.alumno.contra;
 
     this.aplicacionService.recuperar(this.alumno)
     .subscribe(
       res => {
-        location.href="http://localhost:4200/muro";
-        localStorage.setItem('usuario', this.alumno.idAlumno.toString());
-        console.log(res)
+        alert('Contraseña Cambiada')
       },
       err => console.log(err) 
     )

@@ -11,10 +11,10 @@ class IndexRoutes{
     }
 
     config(): void{
-        //this.router.get('/', indexController.index);
-        this.router.post('/signin', indexController.signIn);
-        this.router.put('/signup', indexController.signUp);
-        this.router.post('/recuperar', indexController.recuperar);
+        this.router.post('/api/signin', indexController.signIn);
+        this.router.put('/api/signup', indexController.signUp);
+        this.router.get('/api/miperfil/:idAlumno', indexController.miPerfil);
+        this.router.post('/api/recuperar/', indexController.recuperar);
     }
 
 }
